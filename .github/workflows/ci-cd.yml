@@ -15,6 +15,7 @@ jobs:
           registry-url: 'https://npm.pkg.github.com'
       - run: npm install
       - run: npm test
+      - run: echo ${{ github.ref }}
       - run: npm publish
         if: github.ref == 'refs/heads/master'
         env:
