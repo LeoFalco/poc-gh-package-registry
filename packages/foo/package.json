@@ -1,0 +1,11 @@
+{
+  "name": "@leofalco/foo",
+  "version": "1.0.6",
+  "description": "foo is a package ro print foo on console (and test github package registry",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"no test specified\" && exit 0"
+  },
+  "author": "leonardo.falco@outlook.com",
+  "license": "MIT"
+}
