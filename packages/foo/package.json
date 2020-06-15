@@ -1,11 +1,23 @@
 {
   "name": "@leofalco/foo",
-  "version": "1.0.6",
+  "version": "0.0.14",
   "description": "foo is a package ro print foo on console (and test github package registry",
   "main": "index.js",
   "scripts": {
     "test": "echo \"no test specified\" && exit 0"
   },
   "author": "leonardo.falco@outlook.com",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@github.com/leoFalco/foo.git",
+    "directory": "packages/foo"
+  },
+  "dependencies": {
+    "axios": "0.19.2"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "gitHead": "51fdcec8ce81d55465eea3eb609ee5bc665b1a60"
 }
