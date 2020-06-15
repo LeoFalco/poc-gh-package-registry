@@ -1,12 +1,11 @@
 {
   "name": "@leofalco/foo",
-  "version": "5.0.1",
+  "version": "0.0.5",
   "description": "foo is a package ro print foo on console (and test github package registry",
   "main": "index.js",
   "scripts": {
     "test": "echo \"no test specified\" && exit 0"
   },
-
   "author": "leonardo.falco@outlook.com",
   "license": "MIT",
   "repository": {
@@ -16,5 +15,8 @@
   },
   "dependencies": {
     "axios": "0.19.2"
+  },
+  "publishConfig": {
+    "registry":"https://npm.pkg.github.com/"
   }
 }
