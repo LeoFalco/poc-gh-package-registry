@@ -6,7 +6,7 @@ on:
       - master
   pull_request:
      branches:
-      - master
+      - '**'
 
 jobs:
   build:
@@ -19,8 +19,8 @@ jobs:
         with:
           node-version: '14.x'
           registry-url: 'https://npm.pkg.github.com'
-      - run: npm install
-      - run: npm test
+      - run: npx lerna bootstrap
+      - run: npx lerna run test
       - run: echo ${{ github.ref }}
 
       - name: Configure Git
@@ -31,7 +31,11 @@ jobs:
           git remote set-url origin https://$GITHUB_ACTOR:$GITHUB_PAT@github.com/leoFalco/foo
         env:
           GITHUB_PAT: ${{ secrets.GITHUB_PAT }}
+
       - run: npm publish
+        working-directory: packages/foo
+
+      - run: npx lerna publish from-package -y
         if: github.ref == 'refs/heads/master'
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GH_PACKAGES_TOKEN }}
