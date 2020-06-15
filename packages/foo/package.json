@@ -1,6 +1,6 @@
 {
   "name": "@leofalco/foo",
-  "version": "1.0.6",
+  "version": "0.0.1",
   "description": "foo is a package ro print foo on console (and test github package registry",
   "main": "index.js",
   "scripts": {
@@ -9,10 +9,10 @@
   "author": "leonardo.falco@outlook.com",
   "license": "MIT",
   "publishConfig": {
-    "registry":"https://npm.pkg.github.com/"
+    "registry": "https://npm.pkg.github.com/"
   },
-  "repository" : {
-    "type" : "git",
+  "repository": {
+    "type": "git",
     "url": "ssh://git@github.com/leoFalco/monorepo.git",
     "directory": "packages/foo"
   }
