@@ -6,7 +6,7 @@ on:
       - master
   pull_request:
      branches:
-      - master
+      - '**'
 
 jobs:
   build:
@@ -31,7 +31,7 @@ jobs:
           git remote set-url origin https://$GITHUB_ACTOR:$GITHUB_PAT@github.com/leoFalco/foo
         env:
           GITHUB_PAT: ${{ secrets.GITHUB_PAT }}
-      - run: npm publish
+      - run: lerna publish from-package -y
         if: github.ref == 'refs/heads/master'
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GH_PACKAGES_TOKEN }}
