@@ -12,15 +12,18 @@ jobs:
   build:
     timeout-minutes: 10
     runs-on: ubuntu-latest
+    env:
+      GH_PACKAGES_TOKEN: ${{ secrets.GH_PACKAGES_TOKEN }}
     
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
         with:
           node-version: '14.x'
-          registry-url: 'https://npm.pkg.github.com'
-      - run: npx lerna bootstrap
-      - run: npx lerna run test
+      - run: npm install -g lerna
+      - run: lerna bootstrap
+
+      - run: lerna run test
       - run: echo ${{ github.ref }}
 
       - name: Configure Git
@@ -28,14 +31,8 @@ jobs:
         run: |
           git config --global user.name 'Leo Falco'
           git config --global user.email 'leonardo.falco@outlook.com'
-          git remote set-url origin https://$GITHUB_ACTOR:$GITHUB_PAT@github.com/leoFalco/foo
-        env:
-          GITHUB_PAT: ${{ secrets.GITHUB_PAT }}
+          git remote set-url origin https://$GITHUB_ACTOR:$GH_PACKAGES_TOKEN@github.com/leoFalco/foo
 
-      - run: npm publish
-        working-directory: packages/foo
-
-      - run: npx lerna publish from-package -y
+      - run: npm config set registry 'https://npm.pkg.github.com'
+      - run: lerna publish from-package -y
         if: github.ref == 'refs/heads/master'
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.GH_PACKAGES_TOKEN }}

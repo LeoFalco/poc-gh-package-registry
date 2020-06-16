@@ -4,7 +4,10 @@
   "devDependencies": {
     "lerna": "^3.22.1"
   },
-  
+  "repository": {
+    "url": "ssh://git@github.com/LeoFalco/foo.git",
+    "type" : "git"
+  },
   "publishConfig": {
     "registry":"https://npm.pkg.github.com/"
   }
