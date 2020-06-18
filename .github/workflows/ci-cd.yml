@@ -12,24 +12,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@master
-      
+    - uses: actions/checkout@master      
     - uses: actions/setup-node@master
-      with:
-        node-version: 12
-        registry-url: https://npm.pkg.github.com/
-        scope: '@leofalco'
     - name: Update package version and setup git
-      run: |
-        git config user.name "Actions User"
-        git config user.email noreply@github.com
-        npm version 1.0.$(date +%s)
-
-    - run: npm install -g lerna
-
-    - uses: actions/setup-node@master
-    - name: Publish to GitHub Package Registry
-      run: lerna publish from-package -y
+    - run: lerna bootstrap
+    - run: "npm publish --registry-url: https://npm.pkg.github.com/ --scope: '@leofalco'"
+      working-directory: packages/foo
       env:
         GH_PACKAGES_TOKEN: ${{github.GH_PACKAGES_TOKEN}}
 
