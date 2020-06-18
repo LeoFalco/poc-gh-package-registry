@@ -1,6 +1,5 @@
 {
   "name": "root",
-  "private": true,
   "devDependencies": {
     "lerna": "^3.22.1"
   },
@@ -11,5 +10,5 @@
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
   },
-  "version": "1.0.1592515744"
+  "version": "1.0.1592515746"
 }

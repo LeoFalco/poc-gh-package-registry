@@ -10,29 +10,29 @@ on:
 
 jobs:
   build:
-    timeout-minutes: 10
     runs-on: ubuntu-latest
-    env:
-      GH_PACKAGES_TOKEN: ${{ secrets.GH_PACKAGES_TOKEN }}
-    
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
-        with:
-          node-version: '14.x'
-      - run: npm install -g lerna
-      - run: lerna bootstrap
+      # Checkout the repo
+    - uses: actions/checkout@master
+      
+    # Update package version and set up git
+    - uses: actions/setup-node@master
+      with:
+        node-version: 12
+        registry-url: https://npm.pkg.github.com/
+        scope: '@leofalco'
+    - name: Update package version and setup git
+      run: |
+        git config user.name "Actions User"
+        git config user.email noreply@github.com
+        npm version 1.0.$(date +%s)
 
-      - run: lerna run test
-      - run: echo ${{ github.ref }}
+    - run: npm install -g lerna
 
-      - name: Configure Git
-        if: github.ref == 'refs/heads/master'
-        run: |
-          git config --global user.name 'Leo Falco'
-          git config --global user.email 'leonardo.falco@outlook.com'
-          git remote set-url origin https://$GITHUB_ACTOR:$GH_PACKAGES_TOKEN@github.com/leoFalco/foo
+    # Publish to GitHub Package Registry
+    - uses: actions/setup-node@master
+    - name: Publish to GitHub Package Registry
+      run: lerna publish from-package -y
+      env:
+        GH_PACKAGES_TOKEN: ${{github.GH_PACKAGES_TOKEN}}
 
-      - run: npm config set registry 'https://npm.pkg.github.com'
-      - run: lerna publish from-package -y
-        if: github.ref == 'refs/heads/master'
