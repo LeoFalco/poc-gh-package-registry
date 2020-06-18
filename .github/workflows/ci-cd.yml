@@ -17,7 +17,7 @@ jobs:
     - run: npx lerna bootstrap
       env:
         GH_PACKAGES_TOKEN: ${{github.GH_PACKAGES_TOKEN}}
-    - run: "npm publish --registry-url: https://npm.pkg.github.com/ --scope: '@leofalco'"
+    - run: "npm publish --registry-url=https://npm.pkg.github.com/ --scope=@leofalco"
       working-directory: packages/foo
       env:
         GH_PACKAGES_TOKEN: ${{github.GH_PACKAGES_TOKEN}}
