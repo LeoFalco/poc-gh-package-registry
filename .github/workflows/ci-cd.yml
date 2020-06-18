@@ -12,10 +12,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      # Checkout the repo
     - uses: actions/checkout@master
       
-    # Update package version and set up git
     - uses: actions/setup-node@master
       with:
         node-version: 12
@@ -29,7 +27,6 @@ jobs:
 
     - run: npm install -g lerna
 
-    # Publish to GitHub Package Registry
     - uses: actions/setup-node@master
     - name: Publish to GitHub Package Registry
       run: lerna publish from-package -y
