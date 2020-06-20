@@ -10,7 +10,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "ssh://git@github.com/leoFalco/foo.git",
+    "url": "ssh://git@github.com/leoFalco/poc-gh-package-registry.git",
     "directory": "packages/foo"
   },
   "dependencies": {

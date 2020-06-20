@@ -15,14 +15,14 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/LeoFalco/foo.git",
+    "url": "git+https://github.com/LeoFalco/poc-gh-package-registry.git",
     "directory": "packages/bar"
   },
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 0"
   },
   "bugs": {
-    "url": "https://github.com/LeoFalco/foo/issues"
+    "url": "https://github.com/LeoFalco/poc-gh-package-registry/issues"
   },
-  "homepage": "https://github.com/LeoFalco/foo#readme"
+  "homepage": "https://github.com/LeoFalco/poc-gh-package-registry#readme"
 }

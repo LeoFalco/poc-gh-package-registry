@@ -40,7 +40,7 @@ jobs:
 
     - name: Increment version
       if: github.ref == 'refs/heads/master'
-      run: "npx lerna version --conventional-commits --create-release github -m \"chore(release): publish %v\" -y"
+      run: "npx lerna version -message \"chore(release): publish %v\" --conventional-commits --create-release github -y"
 
     - name: Publish to gh packages
       run: npx lerna publish from-package -y --registry=https://npm.pkg.github.com/ 
