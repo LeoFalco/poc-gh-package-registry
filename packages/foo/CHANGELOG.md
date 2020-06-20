@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.0.20 (2020-06-20)
+
+
+### Bug Fixes
+
+* **commitzen:** add commitzed ([3e07792](https://github.com/leoFalco/foo/commit/3e07792499b993bdaa874e43738689ce8cbd9af6))
+
+
+
+
+
 ## 0.0.18 (2020-06-20)
 
 
