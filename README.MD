@@ -1,4 +1,4 @@
-# Monorepo
+# Poc gh package registry
 
 Poc para demonstrar um projeto usando
 
