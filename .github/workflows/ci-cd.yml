@@ -18,7 +18,7 @@ jobs:
     - uses: actions/setup-node@master
       with:
         registry-url: 'https://npm.pkg.github.com'
-    - run: lerna run test
-    - run: lerna bootstrap
-    - run: lerna version --conventional-commits -y  
-    - run: lerna publish from-package -y --registry=https://npm.pkg.github.com/ 
+    - run: npx lerna bootstrap
+    - run: npx lerna run test
+    - run: npx lerna version --conventional-commits -y  
+    - run: npx lerna publish from-package -y --registry=https://npm.pkg.github.com/ 
