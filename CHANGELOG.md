@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.0.22 (2020-06-20)
+
+
+### Bug Fixes
+
+* **actions:** fix broken action script ([14af0ff](https://github.com/LeoFalco/foo/commit/14af0ff5fe0f252ff2d45c439f65a1d707d5ff75))
+
+
+
+
+
 ## 0.0.21 (2020-06-20)
 
 **Note:** Version bump only for package root
