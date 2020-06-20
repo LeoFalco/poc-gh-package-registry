@@ -11,14 +11,15 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}W
     steps:
     - uses: actions/checkout@master      
     - uses: actions/setup-node@master
-    - run: npx lerna bootstrap
-      env:
-        GH_PACKAGES_TOKEN: ${{github.GH_PACKAGES_TOKEN}}
-    - run: npm publish
-      working-directory: packages/foo
-      env:
-        GH_PACKAGES_TOKEN: ${{github.GH_PACKAGES_TOKEN}}
-
+      with:
+        registry-url: 'https://npm.pkg.github.com'
+    - run: npm install -g lerna
+    - run: lerna run test
+    - run: lerna bootstrap
+    - run: lerna version --conventional-commits -y  
+    - run: lerna publish from-package -y --registry=https://npm.pkg.github.com/ 
