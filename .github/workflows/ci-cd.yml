@@ -18,7 +18,6 @@ jobs:
     - uses: actions/setup-node@master
       with:
         registry-url: 'https://npm.pkg.github.com'
-    - run: npm install -g lerna
     - run: lerna run test
     - run: lerna bootstrap
     - run: lerna version --conventional-commits -y  
