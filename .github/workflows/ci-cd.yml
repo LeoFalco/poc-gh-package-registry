@@ -13,6 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       GH_PACKAGES_TOKEN: ${{ secrets.GH_PACKAGES_TOKEN }}
+      GH_TOKEN: ${{ secrets.GH_PACKAGES_TOKEN }}
     steps:
     - uses: actions/checkout@master      
     - uses: actions/setup-node@master
