@@ -13,20 +13,34 @@ jobs:
     runs-on: ubuntu-latest
     env:
       GH_PACKAGES_TOKEN: ${{ secrets.GH_PACKAGES_TOKEN }}
-      GH_TOKEN: ${{ secrets.GH_PACKAGES_TOKEN }}
+      GH_TOKEN: ${{ secrets.GH_PACKAGES_TOKEN }} # lerna uses this env to auth to commit
     steps:
-    - uses: actions/checkout@master      
+    - name: Checkout
+      uses: actions/checkout@master      
+
+    - name: Setup node
     - uses: actions/setup-node@master
       with:
         registry-url: 'https://npm.pkg.github.com'
-    - name: Git Identity
+   
+    - name: Install dependencies
+      run: npx lerna bootstrap
+
+    - name: Tests
+      run: npx lerna run test
+   
+    - name: config git
+      if: github.ref == 'refs/heads/master'
       run: |
-        git config --global user.name 'github-actions[bot]'
-        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+        git config --global user.name 'gh-actions-bot'
+        git config --global user.email 'gh-actions-bot@noreply.github.com'
         git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/$GITHUB_REPOSITORY
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}    
-    - run: npx lerna bootstrap
-    - run: npx lerna run test
-    - run: "npx lerna version --conventional-commits --create-release github -m \"chore(release): publish %v\" -y"
-    - run: npx lerna publish from-package -y --registry=https://npm.pkg.github.com/ 
+
+    - name: Increment version
+      if: github.ref == 'refs/heads/master'
+      run: "npx lerna version --conventional-commits --create-release github -m \"chore(release): publish %v\" -y"
+
+    - name: Publish to gh packages
+      run: npx lerna publish from-package -y --registry=https://npm.pkg.github.com/ 
