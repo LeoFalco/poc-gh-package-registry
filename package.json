@@ -1,9 +1,21 @@
 {
   "name": "root",
   "devDependencies": {
+    "cz-conventional-changelog": "3.2.0",
+    "husky": "4.2.5",
     "lerna": "^3.22.1"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "prepare-commit-msg": "exec < /dev/tty && git cz --hook || true "
+    }
   }
 }
