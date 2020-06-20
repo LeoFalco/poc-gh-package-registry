@@ -19,7 +19,7 @@ jobs:
       uses: actions/checkout@master      
 
     - name: Setup node
-    - uses: actions/setup-node@master
+      uses: actions/setup-node@master
       with:
         registry-url: 'https://npm.pkg.github.com'
    
