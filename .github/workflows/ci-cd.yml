@@ -28,5 +28,5 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}    
     - run: npx lerna bootstrap
     - run: npx lerna run test
-    - run: npx lerna version --conventional-commits -y  
+    - run: "npx lerna version --conventional-commits --create-release github -m \"chore(release): publish %v\" -y"
     - run: npx lerna publish from-package -y --registry=https://npm.pkg.github.com/ 
