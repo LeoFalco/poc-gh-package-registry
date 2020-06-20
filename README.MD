@@ -1,4 +1,4 @@
-# Poc gh package registry
+# Poc github package registry
 
 Poc para demonstrar um projeto usando
 
