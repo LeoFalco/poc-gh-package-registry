@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.3.0 (2020-06-22)
+
+
+### Features
+
+* **spaces:** spacees ([21f86e8](https://github.com/leoFalco/poc-gh-package-registry/commit/21f86e8dc0a809e45e115003943369b32cd837c1))
+
+
+
+
+
 # 0.2.0 (2020-06-22)
 
 

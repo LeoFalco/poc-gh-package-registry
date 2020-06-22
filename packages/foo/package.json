@@ -1,6 +1,6 @@
 {
   "name": "@leofalco/foo",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "foo is a package ro print foo on console (and test github package registry",
   "main": "index.js",
   "scripts": {
