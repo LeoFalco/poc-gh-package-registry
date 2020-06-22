@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.0.27](https://github.com/LeoFalco/foo/compare/v0.0.26...v0.0.27) (2020-06-22)
+
+
+### Bug Fixes
+
+* **none:** none ([23b8ff5](https://github.com/LeoFalco/foo/commit/23b8ff5b93ea681c6a14b15a4995cd24d0be55af))
+* **test:** test ([ff68375](https://github.com/LeoFalco/foo/commit/ff683754a0df21075e392892fa1ecc5fa80bc83e))
+
+
+
+
+
 ## 0.0.26 (2020-06-22)
 
 **Note:** Version bump only for package root
