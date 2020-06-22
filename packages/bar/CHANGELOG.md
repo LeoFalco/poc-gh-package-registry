@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0 (2020-06-22)
+
+
+### Features
+
+* **log:** log bar to the console ([026d8a4](https://github.com/LeoFalco/poc-gh-package-registry/commit/026d8a44ea6797f13e837d40266e4699ade002fe))
+
+
+
+
+
 ## [0.0.27](https://github.com/LeoFalco/poc-gh-package-registry/compare/v0.0.26...v0.0.27) (2020-06-22)
 
 
