@@ -5,7 +5,17 @@
   "version": "independent",
   "command": {
     "publish": {
-      "conventionalCommits": true
+      "conventionalCommits": true,
+      "fromPackage": true,
+      "registry": "https://npm.pkg.github.com/",
+      "yes": true
+    },
+    "command": {
+      "version": {
+        "message": "chore(release): publish",
+        "createRelease": "github",
+        "yes": true
+      }
     }
   }
 }
