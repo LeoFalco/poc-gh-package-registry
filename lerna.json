@@ -7,14 +7,9 @@
     "publish": {
       "conventionalCommits": true,
       "registry": "https://npm.pkg.github.com/",
+      "message": "chore(release): publish",
+      "createRelease": "github",
       "yes": true
-    },
-    "command": {
-      "version": {
-        "message": "chore(release): publish",
-        "createRelease": "github",
-        "yes": true
-      }
     }
   }
 }
