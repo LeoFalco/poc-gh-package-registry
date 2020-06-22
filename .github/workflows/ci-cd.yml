@@ -37,7 +37,7 @@ jobs:
         git config --global user.name 'gh-actions-bot'
         git config --global user.email 'gh-actions-bot@noreply.github.com'
         git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/$GITHUB_REPOSITORY
-        git fetch --depth=1 origin +refs/tags/*:refs/tags/*
+        git fetch --tags
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}    
 
