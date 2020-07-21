@@ -29,8 +29,8 @@ jobs:
     - name: Git config
       if: github.ref == 'refs/heads/master'
       run: |
-        git config --global user.name 'gh-actions-bot'
-        git config --global user.email 'gh-actions-bot@noreply.github.com'
+        git config --global user.name 'gh-actions'
+        git config --global user.email 'gh-actions@noreply.github.com'
         git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/$GITHUB_REPOSITORY
         git fetch --tags
       env:
@@ -39,4 +39,4 @@ jobs:
     - name: Publish to gh packages
       run: npx lerna publish
       env:
-        NODE_AUTH_TOKEN: ${{ secrets.GH_PACKAGES_TOKEN }} # lerna uses this env to auth to commit
+        GH_TOKEN: ${{ secrets.GH_PACKAGES_TOKEN }} # lerna uses this env to auth to commit
