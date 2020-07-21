@@ -1,15 +1,15 @@
 {
-  "packages": [
-    "packages/*"
-  ],
-  "version": "independent",
-  "command": {
-    "publish": {
-      "conventionalCommits": true,
-      "registry": "https://npm.pkg.github.com/",
-      "message": "chore(release): publish",
-      "createRelease": "github",
-      "yes": true
+    "packages": [
+        "packages/*"
+    ],
+    "version": "independent",
+    "command": {
+        "publish": {
+            "conventionalCommits": true,
+            "registry": "https://npm.pkg.github.com/",
+            "message": "chore(release): publish",
+            "createRelease": "github",
+            "yes": true
+        }
     }
-  }
 }

@@ -11,20 +11,15 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      GH_PACKAGES_TOKEN: ${{ secrets.GH_PACKAGES_TOKEN }}
-      GH_TOKEN: ${{ secrets.GH_PACKAGES_TOKEN }} # lerna uses this env to auth to commit
     steps:
     - name: Checkout
       uses: actions/checkout@master      
-      with:
-        fetch-depth: 0
 
     - name: Setup node
       uses: actions/setup-node@master
       with:
         registry-url: 'https://npm.pkg.github.com'
-   
+
     - name: Install dependencies
       run: npx lerna bootstrap
 
@@ -43,3 +38,5 @@ jobs:
 
     - name: Publish to gh packages
       run: npx lerna publish
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.GH_PACKAGES_TOKEN }} # lerna uses this env to auth to commit
