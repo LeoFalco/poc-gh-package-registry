@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.3.13 (2020-07-21)
+
+
+### Bug Fixes
+
+* 52 ([e1d0348](https://github.com/LeoFalco/poc-gh-package-registry/commit/e1d0348aeafcb5bad1cd8d328970db3f0c0efb7d))
+
+
+
+
+
 ## 0.3.12 (2020-07-21)
 
 **Note:** Version bump only for package @leofalco/bar
