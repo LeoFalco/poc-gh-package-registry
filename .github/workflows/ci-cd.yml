@@ -30,6 +30,8 @@ jobs:
           node_modules
           */*/node_modules
         key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: ${{ runner.os }}-
+
 
     - name: Install dependencies
       run: npx lerna bootstrap
