@@ -24,5 +24,6 @@
   "bugs": {
     "url": "https://github.com/LeoFalco/poc-gh-package-registry/issues"
   },
-  "homepage": "https://github.com/LeoFalco/poc-gh-package-registry#readme"
+  "homepage": "https://github.com/LeoFalco/poc-gh-package-registry#readme",
+  "gitHead": "e3e3b2083bbd03f2edc868fff943111caea3002b"
 }
