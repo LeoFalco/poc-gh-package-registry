@@ -47,6 +47,10 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}    
 
+    - run: echo $GH_PACKAGES_TOKEN
+      env: 
+        GH_PACKAGES_TOKEN: ${{ secrets.GH_PACKAGES_TOKEN }}
+
     - name: Publish to gh packages
       run: npx lerna publish
       env:
