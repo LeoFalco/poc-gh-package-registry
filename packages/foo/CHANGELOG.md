@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.3.10 (2020-07-21)
+
+**Note:** Version bump only for package @leofalco/foo
+
+
+
+
+
 ## [0.3.9](https://github.com/leoFalco/poc-gh-package-registry/compare/@leofalco/foo@0.3.8...@leofalco/foo@0.3.9) (2020-07-22)
 
 
