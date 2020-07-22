@@ -54,6 +54,9 @@ jobs:
       env: 
         GH_PACKAGES_TOKEN: ${{ secrets.GH_PACKAGES_TOKEN }}
 
+    - name: Detect updated packages
+      run: npx lerna updated
+
     - name: Publish to gh packages
       run: npx lerna publish
       env:
