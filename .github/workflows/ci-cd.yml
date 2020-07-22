@@ -33,14 +33,12 @@ jobs:
           node_modules
           */*/node_modules
         key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
-        restore-keys: ${{ runner.os }}-
-
 
     - name: Install dependencies
       run: npx lerna bootstrap
 
     - name: Tests
-      run: npx lerna run test
+      run: npx lerna run test --progress
    
     - name: Git config
       if: github.ref == 'refs/heads/master'
