@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.9](https://github.com/leoFalco/poc-gh-package-registry/compare/@leofalco/foo@0.3.8...@leofalco/foo@0.3.9) (2020-07-22)
+
+
+### Bug Fixes
+
+* 51 ([f1e688d](https://github.com/leoFalco/poc-gh-package-registry/commit/f1e688d1f6a6bf33041f01ad11d70a3458576d39))
+
+
+
+
+
+
 ## 0.3.8 (2020-07-21)
 
 
