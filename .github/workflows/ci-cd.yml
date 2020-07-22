@@ -62,8 +62,7 @@ jobs:
       run: npx lerna updated
 
     - name: Publish to gh packages
-      if: github.ref == 'refs/heads/master' && steps.detect-updates.oucome == 'success'
-
+      if: github.ref == 'refs/heads/master' && steps.detect-updates.outcome == 'success'
       run: npx lerna publish
       env:
         GH_TOKEN: ${{ secrets.GH_PACKAGES_TOKEN }} # lerna uses this env to auth to commit
