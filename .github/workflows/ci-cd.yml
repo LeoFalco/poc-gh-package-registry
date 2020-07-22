@@ -18,7 +18,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@master
       with:
-        fetch-depth: 0
+        fetch-depth: 0 # fetch entrie tree for lerna correct detect version changes
 
     - name: Setup node
       uses: actions/setup-node@master
@@ -57,9 +57,13 @@ jobs:
         GH_PACKAGES_TOKEN: ${{ secrets.GH_PACKAGES_TOKEN }}
 
     - name: Detect updated packages
+      id: detect-updates
+      continue-on-error: true # prevent fail if any update are detected
       run: npx lerna updated
 
     - name: Publish to gh packages
+      if: github.ref == 'refs/heads/master' && steps.detect-updates.oucome == 'success'
+
       run: npx lerna publish
       env:
         GH_TOKEN: ${{ secrets.GH_PACKAGES_TOKEN }} # lerna uses this env to auth to commit
