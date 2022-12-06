@@ -7,7 +7,7 @@
         "commitlint": "^9.1.0",
         "cz-conventional-changelog": "3.2.0",
         "husky": "4.3.8",
-        "lerna": "^3.22.1"
+        "lerna": "^6.1.0"
     },
     "publishConfig": {
         "registry": "https://npm.pkg.github.com/"
